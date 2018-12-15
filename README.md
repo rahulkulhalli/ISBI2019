@@ -3,5 +3,7 @@ A repository where all our efforts towards the ISBI 2019 Challenge will be maint
 
 # Contributors
 Rahul Kulhalli
+
 Chinmay Savadikar
+
 Bhushan Garware
