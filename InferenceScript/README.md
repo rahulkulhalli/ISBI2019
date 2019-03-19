@@ -83,3 +83,15 @@ df["preds"] = df["preds"].apply(lambda x: int(x.split("/")[1].split(".")[0]))
     
 df.sort_values(by="preds", axis=0, inplace=True, ascending=True)
 ```
+
+## Note
+The script does not check for GPU configuration and will not run on GPU(s) by default. If you'd like to perform inferences using your GPU(s), please add the following snippet right after __line 96__ in `load_and_predict.py` (If you're using multi-GPU support, it would also be a good idea to increase the `batch_size` parameter on __line 107__):
+ 
+ ```python
+ 
+# Add the utils package.
+from keras import utils
+
+# num_gpus is the number of GPUs visible to TensorFlow.
+model = utils.multi_gpu_model(model, gpus=num_gpus)
+ ```
