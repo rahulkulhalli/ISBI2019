@@ -85,7 +85,7 @@ df.sort_values(by="preds", axis=0, inplace=True, ascending=True)
 ```
 
 ## Note
-The script does not check for GPU configuration and will not run on GPU(s) by default. If you'd like to perform inferences using your GPU(s), please add the following snippet right after __line 96__ in `load_and_predict.py` (If you're using multi-GPU support, it would also be a good idea to increase the `batch_size` parameter on __line 107__):
+The script does not check for GPU configuration and will not run on GPU(s) by default. If you'd like to perform inferences using your GPU(s), please add the following snippet right after __line 96__ in `load_and_predict.py` (If you're using multi-GPU support, it would also be a good idea to increase the `batch_size` parameter on __line 107__; just make sure that it is a multiple of the number of GPUs you have.):
  
  ```python
  
